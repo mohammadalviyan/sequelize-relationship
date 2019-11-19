@@ -5,6 +5,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Company.associate = function(models) {
     // associations can be defined here
+    // 1:n
+    Company.hasMany(models.User, {as: 'employes'})
   };
   return Company;
 };

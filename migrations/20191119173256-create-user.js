@@ -18,7 +18,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       companyId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { //user belongs to company 1:1
+          model: 'Companies',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

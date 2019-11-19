@@ -6,6 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   UserWorkingDay.associate = function(models) {
     // associations can be defined here
+    UserWorkingDay.belongsTo(models.User, {foreignKey: 'userId'})
+    UserWorkingDay.belongsTo(models.WorkingDay, {foreignKey: 'workingDayId'})
   };
   return UserWorkingDay;
 };

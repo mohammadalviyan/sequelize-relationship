@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   WorkingDay.associate = function(models) {
     // associations can be defined here
+    WorkingDay.belongsToMany(models.User, {through: 'UserWorkingDays', foreignKey: 'workingDayId', as: 'employes'})
   };
   return WorkingDay;
 };
